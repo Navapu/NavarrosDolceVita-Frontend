@@ -36,8 +36,14 @@ const AuthContextProvider = ({ children }) => {
         navigate("/profile");
     }
 
+    const logout = async () => {
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+        setUser(null)
+        navigate("/login");
+    }
     return (
-        <AuthContext.Provider value={{ user, login }}>
+        <AuthContext.Provider value={{ user, login, logout }}>
             {children}
         </AuthContext.Provider>
     )
