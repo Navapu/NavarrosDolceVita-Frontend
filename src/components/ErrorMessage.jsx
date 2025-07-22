@@ -1,6 +1,6 @@
-const Error = ({error}) => {
+const ErrorMessage = ({error}) => {
     return(
         <p className="text-red-400">{error}</p>
     )
 }
-export default Error
+export default ErrorMessage

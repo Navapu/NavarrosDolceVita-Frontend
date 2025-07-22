@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { useContext } from "react";
-import Error from "../components/Error"
+import ErrorMessage from "../components/ErrorMessage"
 
 
 export const Login = () => {
@@ -35,7 +35,7 @@ export const Login = () => {
                     <button type="submit">Siguiente</button>
                 </form>
 
-            {error && <Error error={error}/>}
+            {error && <ErrorMessage error={error}/>}
             </div>
         </div>
     )

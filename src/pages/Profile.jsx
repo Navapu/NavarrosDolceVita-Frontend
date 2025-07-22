@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { useContext } from "react";
 import Orders from "../components/Orders";
-import Error from "../components/Error"
+import ErrorMessage from "../components/ErrorMessage"
 export const Profile = () => {
     const BACKEND_API = import.meta.env.VITE_BACKEND_API;
     const [error, setError] = useState(null);
@@ -69,7 +69,7 @@ export const Profile = () => {
                     ))}
                 </ul>
             </div>
-            {error && <Error error={error}/>}
+            {error && <ErrorMessage error={error}/>}
 
         </div>
     )
