@@ -3,18 +3,22 @@
   margin: 0;
   box-sizing: border-box;
 }
-header{
+
+header {
   background-color: #3C3928;
   color: white;
   padding: 10px;
 }
-header a{
+
+header a {
   color: white;
 }
-header a.active{
+
+header a.active {
   color: #E6C401;
 }
-div .login{
+
+div .login {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -23,13 +27,30 @@ div .login{
   border: 1px solid black;
 }
 
-div .login form{
+div .login form {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  flex-direction: column;  
+  flex-direction: column;
 }
-.menu-login{
+
+.menu-login {
   border: 1px solid black;
+  border-radius: 10px;
+  padding: 6rem 7rem;
+  background-color: #3C3928;
+  color: white;
+
+}
+
+.menu-login input {
+  margin: 20px;
+  width: 100%;
+  background-color: #918230;
+  padding: 10px;
+}
+button{
+  background-color: #E6C401;
+  color: white;
 }

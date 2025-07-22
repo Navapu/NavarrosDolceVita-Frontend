@@ -30,7 +30,7 @@ export const Login = () => {
                 <form onSubmit={handleSubmit} method="POST" className="">
                     <input type="email" value={email} name="email" placeholder="Email" onChange={handleChange} />
                     <input type="password" value={password} name="password" placeholder="Password" onChange={handleChange} />
-                    <button type="submit">Login</button>
+                    <button type="submit">Siguiente</button>
                 </form>
 
                 {error && <p className="text-red-400">{error}</p>}
