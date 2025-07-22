@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { useContext } from "react";
+import Error from "../components/Error"
+
 
 export const Login = () => {
     const [form, setForm] = useState({
@@ -33,7 +35,7 @@ export const Login = () => {
                     <button type="submit">Siguiente</button>
                 </form>
 
-                {error && <p className="text-red-400">{error}</p>}
+            {error && <Error error={error}/>}
             </div>
         </div>
     )

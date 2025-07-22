@@ -1,14 +1,18 @@
 import { useState, useEffect } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { useContext } from "react";
+import Orders from "../components/Orders";
+import Error from "../components/Error"
 export const Profile = () => {
     const BACKEND_API = import.meta.env.VITE_BACKEND_API;
     const [error, setError] = useState(null);
     const [user, setUser] = useState(null)
-    const {logout} = useContext(AuthContext);
+    const { logout } = useContext(AuthContext);
+    const [orders, setOrders] = useState([])
 
     useEffect(() => {
         fetchUser();
+        fetchUserOrders();
     }, [])
 
     const fetchUser = async () => {
@@ -31,17 +35,41 @@ export const Profile = () => {
             setError(e.message)
         }
     }
+
+    const fetchUserOrders = async () => {
+        try {
+            const token = localStorage.getItem('token');
+            const response = await fetch(`${BACKEND_API}/orders/me`, {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+            const ordersdata = await response.json();
+            if (!response.ok || ordersdata.status === "error") {
+                throw new Error(ordersdata.msg);
+            }
+
+            setOrders(ordersdata.data);
+        } catch (error) {
+            setError(error.message);
+        }
+    }
     const name = user?.name;
-    const email = user?.email;
     return (
         <div>
-            <div>
-                <p>Welcome: <b>{name}</b></p>
-                <p>Email: <b>{email}</b></p>
-
-                <button onClick={logout} className="m-3">Logout</button>
+            <div className="mt-4 flex w-full items-center justify-center ">
+                <h1 className="text-center">Bienvenido {name}</h1>
             </div>
-            {error && <p className="text-red-400">{error}</p>}
+            <div>
+                <ul className="orders-list">
+                    {orders.map(order => (
+                        <li key={order._id}>
+                            <Orders {...order} />
+                        </li>
+                    ))}
+                </ul>
+            </div>
+            {error && <Error error={error}/>}
 
         </div>
     )

@@ -1,9 +1,3 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
 header {
   background-color: #3C3928;
   color: white;
@@ -50,7 +44,73 @@ div .login form {
   background-color: #918230;
   padding: 10px;
 }
-button{
+
+button {
   background-color: #E6C401;
   color: white;
+}
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.order-card {
+  background-color: #444036;
+  padding: 16px;
+  margin: 12px auto;
+  border-radius: 12px;
+  color: white;
+  transition: transform 0.2s ease;
+}
+
+.order-card:hover {
+  transform: scale(1.02);
+}
+
+.order-date {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 8px;
+}
+
+.order-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+.order-status {
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.order-status.pending {
+  background-color: #e6c401;
+  color: #333;
+}
+
+.order-status.preparing {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.order-status.delivered {
+  background-color: #10b981;
+  color: white;
+}
+
+.order-status.cancelled {
+  background-color: tomato;
+  color: white;
+}
+
+.order-price {
+  font-size: 16px;
+  font-weight: bold;
 }
