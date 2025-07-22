@@ -43,8 +43,23 @@ const AuthContextProvider = ({ children }) => {
         setUser(null)
         navigate("/login");
     }
+
+    const getOrder = async (id) => {
+        const token = localStorage.getItem('token');
+        const response = await fetch(`${BACKEND_API}/orders/me/${id}`, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+        const data = await response.json();
+        if (!response.ok || data.status === "error") {
+            throw new Error(data.msg);
+        }
+        console.log(data.data)
+        return data.data;
+    }
     return (
-        <AuthContext.Provider value={{ user, login, logout, isLoggedIn }}>
+        <AuthContext.Provider value={{ user, login, logout, isLoggedIn, getOrder }}>
             {children}
         </AuthContext.Provider>
     )
