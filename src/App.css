@@ -14,7 +14,22 @@ header a{
 header a.active{
   color: #E6C401;
 }
-body{
-  background-color: #33322B;
-  color: white;
+div .login{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+}
+
+div .login form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;  
+}
+.menu-login{
+  border: 1px solid black;
 }
