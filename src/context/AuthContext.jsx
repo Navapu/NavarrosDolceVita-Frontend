@@ -12,6 +12,7 @@ const BACKEND_API = import.meta.env.VITE_BACKEND_API;
 
 const AuthContextProvider = ({ children }) => {
     const [user, setUser] = useState(getUser);
+    const isLoggedIn = user !== null;
     const navigate = useNavigate();
 
     const login = async (data) => {
@@ -43,7 +44,7 @@ const AuthContextProvider = ({ children }) => {
         navigate("/login");
     }
     return (
-        <AuthContext.Provider value={{ user, login, logout }}>
+        <AuthContext.Provider value={{ user, login, logout, isLoggedIn }}>
             {children}
         </AuthContext.Provider>
     )
