@@ -6,6 +6,7 @@ import { Login } from './pages/Login'
 import { Order } from './pages/Order'
 import { Profile } from './pages/Profile';
 import PrivateRoute from './components/PrivateRoute';
+import { OrderDetails } from './pages/OrderDetails';
 
 function App() {
 
@@ -15,7 +16,14 @@ function App() {
       <Routes>
         <Route index element={<Home />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/order' element={<Order />} />
+        <Route path='/orders' element={<Order />} />
+
+        <Route path="/orders/:id" element={
+          <PrivateRoute>
+            <OrderDetails />
+          </PrivateRoute>
+        } />
+
         <Route path='/profile' element={
           <PrivateRoute>
             <Profile />

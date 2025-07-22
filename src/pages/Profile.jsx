@@ -63,7 +63,7 @@ export const Profile = () => {
             <div>
                 <ul className="orders-list">
                     {orders.map(order => (
-                        <li key={order._id}>
+                        <li key={order._id} className="w-full">
                             <Orders {...order} />
                         </li>
                     ))}
