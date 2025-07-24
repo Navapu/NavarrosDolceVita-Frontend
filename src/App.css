@@ -196,6 +196,49 @@ button {
   border-radius: 6px;
 }
 
+.not-found {
+  height: 100vh;
+  background-color: #3C3928;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.not-found .titulo {
+  font-size: 8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #E6C401;
+}
+
+.not-found .subtitulo {
+  font-size: 1.5rem;
+  color: #918230;
+  margin-bottom: 2rem;
+}
+
+.home-btn {
+  background-color: #E6C401;
+  color: #3C3928;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  color: white;
+}
+
+.home-btn:hover {
+  background-color: #d4b600;
+  color: white;
+}
+
+
 
 @media (max-width: 500px) {
   .order-card {

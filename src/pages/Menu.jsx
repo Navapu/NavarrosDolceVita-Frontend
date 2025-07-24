@@ -1,8 +1,8 @@
-export const Order = () => {
+export const Menu = () => {
     return(
         <div>
             <h1>
-                Order
+                Menu
             </h1>
         </div>
     )
