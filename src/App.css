@@ -48,6 +48,12 @@ div .login form {
 button {
   background-color: #E6C401;
   color: white;
+  border-radius: 20px;
+}
+
+.menu-login button {
+  margin: 20px;
+  width: 100%;
 }
 
 .orders-list {
@@ -241,8 +247,8 @@ button {
 .menu-page {
   text-align: center;
   padding: 2rem;
-  color: white;
-  background-color: #615c43;
+  color: black;
+  /* background-color: #615c43; */
 }
 
 .category {
@@ -265,12 +271,17 @@ button {
 }
 
 .product-card {
-  background-color: #6d6a5f;
+  /* color: white; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* background-color: #d4d4d3; */
   border-radius: 12px;
   padding: 1rem;
   width: 280px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
   transition: transform 0.2s ease;
+  height: 100%;
 }
 
 .product-card:hover {
@@ -288,6 +299,16 @@ button {
 .product-card h3 {
   font-size: 1.2rem;
   margin: 0.5rem 0;
+}
+
+.product-card .price {
+  font-weight: bold;
+}
+.product-card .price{
+  margin-top: 1rem;
+}
+.product-card button {
+  margin-top: 2rem;
 }
 
 li {
