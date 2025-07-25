@@ -238,6 +238,62 @@ button {
   color: white;
 }
 
+.menu-page {
+  text-align: center;
+  padding: 2rem;
+  color: white;
+  background-color: #615c43;
+}
+
+.category {
+  margin-bottom: 3rem;
+}
+
+.category h2 {
+  margin-bottom: 1rem;
+  color: #E6C401;
+  font-size: 2rem;
+  display: inline-block;
+  padding-bottom: 0.25rem;
+}
+
+.product-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.product-card {
+  background-color: #6d6a5f;
+  border-radius: 12px;
+  padding: 1rem;
+  width: 280px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.02);
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.product-card h3 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+li {
+  list-style: none;
+}
+
 
 
 @media (max-width: 500px) {

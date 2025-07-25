@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router";
 import { Header } from './components/Header'
 import { Home } from './pages/Home'
 import { Login } from './pages/Login'
-import { Menu } from './pages/Menu'
+import { Carta } from './pages/Carta'
 import { Profile } from './pages/Profile';
 import PrivateRoute from './components/PrivateRoute';
 import { OrderDetails } from './pages/OrderDetails';
@@ -17,7 +17,7 @@ function App() {
       <Routes>
         <Route index element={<Home />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/menu' element={<Menu />} />
+        <Route path='/carta' element={<Carta />} />
 
         <Route path="/orders/:id" element={
           <PrivateRoute>

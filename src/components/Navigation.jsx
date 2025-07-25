@@ -7,7 +7,7 @@ export const Navigation = () => {
                 <li><NavLink to="/login">Iniciar sesión</NavLink></li>
                 <li><NavLink to="/profile">Perfil</NavLink></li>
                 {/* <li><NavLink to="/register">Register</NavLink></li> */}
-                <li><NavLink to="/menu">Pedir a domicilio</NavLink></li>
+                <li><NavLink to="/carta">Carta</NavLink></li>
 
 
             </ul>
