@@ -52,7 +52,6 @@ export const Profile = () => {
         }
     }
     const name = user?.name;
-    console.log(user)
     return (
         <div>
             <div className="mt-4 flex w-full items-center justify-center ">
@@ -60,7 +59,8 @@ export const Profile = () => {
             </div>
             <div>
                 <ul className="orders-list">
-                    {orders.map(order => (
+                    {orders.length === 0 ? <p className="mt-3 text-red-500">Todavía no se ha realizado ningún pedido</p> : 
+                    orders.map(order => (
                         <li key={order._id} className="w-full">
                             <Orders {...order} />
                         </li>
