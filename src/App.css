@@ -1,3 +1,6 @@
+body{
+  width: 100%;
+}
 div .login {
   height: 100vh;
   display: flex;
@@ -427,26 +430,6 @@ h2 {
   margin-bottom: 1.5rem;
 }
 
-.cart-actions {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.cart-actions button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.clear-order {
-  background-color: transparent;
-  color: black;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
 
 
 
@@ -486,6 +469,67 @@ h2 {
   color: #cccccc;
 }
 
+.section-address {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.button-sections{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.payment button {
+  width: 50%;
+  padding: 10px 20px;
+  margin: 1rem;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  background-color: white;
+  color: #333;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.payment button.selected {
+  background-color: #E6C401;
+  color: white;
+  border-color: #3C3928;
+}
+
+.cart-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.cart-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.clear-order {
+  background-color: transparent;
+  color: black;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
 .address {
   margin: 1rem;
   border: 1px solid #85816c;
@@ -499,6 +543,22 @@ h2 {
   border: 1px solid #99957c;
 }
 
+@media (max-width: 768px) {
+  .section-address{
+    width: 80%;
+    flex-direction: column;
+  }
+  .blob {
+    display: none;
+  }
+  .blob1{
+    display: none;
+  }
+  .blob2{
+    display: none;
+  }
+}
+
 @media (max-width: 500px) {
   .order-card {
     max-width: 90%;
@@ -506,13 +566,5 @@ h2 {
 
   .order-card-father {
     max-width: 90%;
-  }
-  .blob1{
-    width: 40px;
-    height: 40px;
-  }
-  .blob2{
-    width: 40px;
-    height: 40px;
   }
 }
