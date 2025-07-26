@@ -9,6 +9,8 @@ import PrivateRoute from './components/PrivateRoute';
 import { OrderDetails } from './pages/OrderDetails';
 import { Error404 } from './pages/Error404';
 import { Carrito } from './pages/Carrito';
+import { ProtectedRouteAdmin } from './components/ProtectedRouteAdmin';
+import { AdminOrders } from './pages/AdminOrders';
 
 function App() {
 
@@ -25,6 +27,12 @@ function App() {
           <PrivateRoute>
             <OrderDetails />
           </PrivateRoute>
+        } />
+
+        <Route path="/pedidos/admin" element={
+          <ProtectedRouteAdmin>
+            <AdminOrders />
+          </ProtectedRouteAdmin>
         } />
 
         <Route path='/perfil' element={
