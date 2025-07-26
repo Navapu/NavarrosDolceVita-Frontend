@@ -1,13 +1,10 @@
 import { useState, useEffect } from "react";
-import { AuthContext } from "../context/AuthContext";
-import { useContext } from "react";
 import Orders from "../components/Orders";
 import ErrorMessage from "../components/ErrorMessage"
 export const Profile = () => {
     const BACKEND_API = import.meta.env.VITE_BACKEND_API;
     const [error, setError] = useState(null);
     const [user, setUser] = useState(null)
-    const { logout } = useContext(AuthContext);
     const [orders, setOrders] = useState([])
 
     useEffect(() => {
@@ -55,6 +52,7 @@ export const Profile = () => {
         }
     }
     const name = user?.name;
+    console.log(user)
     return (
         <div>
             <div className="mt-4 flex w-full items-center justify-center ">

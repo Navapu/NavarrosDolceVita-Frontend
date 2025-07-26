@@ -34,7 +34,7 @@ const AuthContextProvider = ({ children }) => {
         delete responseData.data.token;
         localStorage.setItem('user', JSON.stringify(responseData.data));
         setUser(response.data)
-        navigate("/profile");
+        navigate("/perfil");
     }
 
     const logout = async () => {

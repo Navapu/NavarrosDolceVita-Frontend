@@ -8,6 +8,7 @@ import { Profile } from './pages/Profile';
 import PrivateRoute from './components/PrivateRoute';
 import { OrderDetails } from './pages/OrderDetails';
 import { Error404 } from './pages/Error404';
+import { Carrito } from './pages/Carrito';
 
 function App() {
 
@@ -18,14 +19,15 @@ function App() {
         <Route index element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/carta' element={<Carta />} />
+        <Route path='/carrito' element={<Carrito />} />
 
-        <Route path="/orders/:id" element={
+        <Route path="/pedidos/:id" element={
           <PrivateRoute>
             <OrderDetails />
           </PrivateRoute>
         } />
 
-        <Route path='/profile' element={
+        <Route path='/perfil' element={
           <PrivateRoute>
             <Profile />
           </PrivateRoute>
