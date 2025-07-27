@@ -11,7 +11,7 @@ import { Error404 } from './pages/Error404';
 import { Carrito } from './pages/Carrito';
 import { ProtectedRouteAdmin } from './components/ProtectedRouteAdmin';
 import { AdminOrders } from './pages/AdminOrders';
-
+import { AdminOrderDetails } from './pages/AdminOrderDetails';
 function App() {
 
   return (
@@ -32,6 +32,12 @@ function App() {
         <Route path="/pedidos/admin" element={
           <ProtectedRouteAdmin>
             <AdminOrders />
+          </ProtectedRouteAdmin>
+        } />
+
+        <Route path="/pedidos/admin/:id" element={
+          <ProtectedRouteAdmin>
+            <AdminOrderDetails />
           </ProtectedRouteAdmin>
         } />
 

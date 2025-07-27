@@ -1,6 +1,7 @@
-body{
+body {
   width: 100%;
 }
+
 div .login {
   height: 100vh;
   display: flex;
@@ -52,7 +53,7 @@ button {
 }
 
 .order-card {
-  background-color: #444036;
+  background-color: #686459;
   padding: 16px;
   margin: 12px auto;
   border-radius: 12px;
@@ -99,20 +100,16 @@ button {
   text-transform: capitalize;
 }
 
+.order-status {
+  background-color: #10b981;
+  color: white;
+}
+
 .order-status.pendiente {
   background-color: #e69d01;
   color: white;
 }
 
-.order-status.preparando {
-  background-color: #3b82f6;
-  color: white;
-}
-
-.order-status.entregado {
-  background-color: #10b981;
-  color: white;
-}
 
 .order-status.cancelado {
   background-color: tomato;
@@ -135,7 +132,8 @@ button {
 }
 
 .order-detail-father {
-  height: 100vh;
+  margin-top: 2rem;
+  /* height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -476,7 +474,7 @@ h2 {
   text-align: center;
 }
 
-.button-sections{
+.button-sections {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -542,20 +540,144 @@ h2 {
 .address:focus {
   border: 1px solid #99957c;
 }
+.order-status1 {
+  color: #10b981;
+}
+.order-status1.Pendiente {
+  color: #e69d01;
+}
+
+
+
+.order-status1.Cancelado {
+  color: tomato;
+}
+
+.admin-orders-page {
+  padding-top: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: black;
+}
+
+.order-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.status-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.status-buttons button {
+  padding: 10px 20px;
+  border: 2px solid #3C3928;
+  background-color: white;
+  color: #3C3928;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.status-buttons button:hover {
+  background-color: #E6C401;
+  color: white;
+}
+
+.status-buttons button.selected {
+  background-color: #3C3928;
+  color: white;
+}
+
+.order-card-admin {
+  width: 500px;
+  min-height: 100px;
+}
+
+.status-buttons button.selected1 {
+  background-color: #E6C401;
+  color: white;
+}
+
+.status-buttons button {
+  margin: 0.5rem;
+  padding: 8px 16px;
+  background-color: #ccc;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.status-buttons .selected1 {
+  background-color: #E6C401;
+  color: black;
+  font-weight: bold;
+}
+
+.btn-update-status {
+  margin-top: 1rem;
+  padding: 10px 20px;
+  background-color: #9f9b82;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-update-status:hover {
+  background-color: #E6C401;
+  color: #3C3928;
+}
+
+.success-msg {
+  color: green;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.btn-update-status:disabled:hover {
+  background-color: #9f9b82;
+  color: white;
+  cursor: not-allowed;
+}
 
 @media (max-width: 768px) {
-  .section-address{
+  .section-address {
     width: 80%;
     flex-direction: column;
   }
+
   .blob {
     display: none;
   }
-  .blob1{
+
+  .blob1 {
     display: none;
   }
-  .blob2{
+
+  .blob2 {
     display: none;
+  }
+
+  .status-buttons {
+    flex-direction: column;
+  }
+
+  .order-card-admin {
+    width: 200px;
+    min-height: 200px;
   }
 }
 
