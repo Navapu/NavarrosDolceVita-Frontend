@@ -30,7 +30,7 @@ export const Carta = () => {
             }
             setProducts(data.data);
         } catch (error) {
-            setError(error)
+            setError(error.message)
         }
     }
 
