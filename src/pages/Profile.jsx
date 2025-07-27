@@ -10,6 +10,9 @@ export const Profile = () => {
     useEffect(() => {
         fetchUser();
         fetchUserOrders();
+        const interval = setInterval(() => {
+            fetchUserOrders();
+        }, 10000);
     }, [])
 
     const fetchUser = async () => {
@@ -59,15 +62,15 @@ export const Profile = () => {
             </div>
             <div>
                 <ul className="orders-list">
-                    {orders.length === 0 ? <p className="mt-3 text-red-500">Todavía no se ha realizado ningún pedido</p> : 
-                    orders.map(order => (
-                        <li key={order._id} className="w-full">
-                            <Orders {...order} />
-                        </li>
-                    ))}
+                    {orders.length === 0 ? <p className="mt-3 text-red-500">Todavía no se ha realizado ningún pedido</p> :
+                        orders.map(order => (
+                            <li key={order._id} className="w-full">
+                                <Orders {...order} />
+                            </li>
+                        ))}
                 </ul>
             </div>
-            {error && <ErrorMessage error={error}/>}
+            {error && <ErrorMessage error={error} />}
 
         </div>
     )

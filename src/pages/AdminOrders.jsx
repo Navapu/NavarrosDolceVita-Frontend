@@ -10,6 +10,11 @@ export const AdminOrders = () => {
     const [selected, setSelected] = useState("Pendiente")
     useEffect(() => {
         fetchOrders();
+        const interval = setInterval(() => {
+            fetchOrders();
+        }, 10000);
+
+        return () => clearInterval(interval);
     }, [selected])
 
     const fetchOrders = async () => {

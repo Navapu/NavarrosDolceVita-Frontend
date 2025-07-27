@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import { useNavigate } from 'react-router';
 
 export const AuthContext = createContext();
@@ -15,6 +15,10 @@ const AuthContextProvider = ({ children }) => {
     const isLoggedIn = user !== null;
     const navigate = useNavigate();
 
+    useEffect(() => {
+        checkToken();
+    }, []);
+
     const login = async (data) => {
         const response = await fetch(`${BACKEND_API}/user/login`, {
             method: "POST",
@@ -28,14 +32,36 @@ const AuthContextProvider = ({ children }) => {
         if (!response.ok || responseData.status === "error") {
             throw new Error(responseData.msg)
         }
-        console.log(responseData)
-
         localStorage.setItem('token', responseData.data.token);
         delete responseData.data.token;
         localStorage.setItem('user', JSON.stringify(responseData.data));
         setUser(response.data)
         navigate("/perfil");
     }
+    const checkToken = async () => {
+        const token = localStorage.getItem("token");
+        if (!token) return;
+
+        try {
+            const response = await fetch(`${BACKEND_API}/user/me`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+
+            const data = await response.json();
+
+            if (!response.ok || data.status === "error") {
+                throw new Error(data.msg);
+            }
+
+            setUser(data.data);
+            localStorage.setItem("user", JSON.stringify(data.data));
+
+        } catch (error) {
+            logout();
+        }
+    };
 
     const logout = async () => {
         localStorage.removeItem("token");
