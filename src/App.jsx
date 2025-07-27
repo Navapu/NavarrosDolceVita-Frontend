@@ -12,6 +12,7 @@ import { Carrito } from './pages/Carrito';
 import { ProtectedRouteAdmin } from './components/ProtectedRouteAdmin';
 import { AdminOrders } from './pages/AdminOrders';
 import { AdminOrderDetails } from './pages/AdminOrderDetails';
+import { Register } from './pages/Register';
 function App() {
 
   return (
@@ -20,6 +21,8 @@ function App() {
       <Routes>
         <Route index element={<Home />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/registro' element={<Register />} />
+
         <Route path='/carta' element={<Carta />} />
         <Route path='/carrito' element={<Carrito />} />
 

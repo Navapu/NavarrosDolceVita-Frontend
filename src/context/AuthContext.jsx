@@ -35,8 +35,26 @@ const AuthContextProvider = ({ children }) => {
         localStorage.setItem('token', responseData.data.token);
         delete responseData.data.token;
         localStorage.setItem('user', JSON.stringify(responseData.data));
-        setUser(response.data)
+        setUser(responseData.data)
         navigate("/perfil");
+    }
+
+    const register = async (data) => {
+        const response = await fetch(`${BACKEND_API}/user/register`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+        const responseData = await response.json();
+
+        if (!response.ok || responseData.status === "error") {
+            throw new Error(responseData.msg)
+        }
+        console.log(responseData)
+
+        await login({ email: data.email, password: data.password })
     }
     const checkToken = async () => {
         const token = localStorage.getItem("token");
@@ -85,7 +103,7 @@ const AuthContextProvider = ({ children }) => {
         return data.data;
     }
     return (
-        <AuthContext.Provider value={{ user, login, logout, isLoggedIn, getOrder }}>
+        <AuthContext.Provider value={{ user, login, logout, isLoggedIn, getOrder, register }}>
             {children}
         </AuthContext.Provider>
     )
